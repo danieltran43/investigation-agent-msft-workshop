@@ -14,7 +14,16 @@ MdeMCP:      https://mcp-mde.gentleflower-524cd753.eastus2.azurecontainerapps.io
 Information only. You will be able to select these MCPs as an option during the lab.
 
 ## Request Access To Your Environement
-1.
+1. Scan the QR code
+![QR Code To Access Lab Environment](./assets/0-vertexia-lab-request.png)
+2. From the QR code, you will received a link to request access to the lab environment, input your Microsoft account
+![Input Your Microsoft Account](./assets/01-input-email.png)
+3. Complete your authentication and MFA
+![Complete your authentication and MFA](./assets/02-complete-your-authentication.png)
+4. Now you are able to request access to the lab environment, click Next
+![Request Access To The Lab Environment](./assets/03-request-your-accesss.png)
+5. No need to defined anything for now, just click on Next to continue the the request
+![Skip any clarification](./assets/04-skip-to-continue.png)
 
 ## Foundry UI steps
 
