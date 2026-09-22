@@ -1,4 +1,4 @@
-# 03 — Connect SentinelMCP and MdeMCP
+# 01 — Setup Connection — Connect SentinelMCP and MdeMCP
 
 ## Objective
 
