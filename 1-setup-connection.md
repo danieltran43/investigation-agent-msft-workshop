@@ -44,28 +44,30 @@ Walk through the full lab entry path: request access to the lab environment, set
 9. Once the facilitator approves the request, you receive an access-granted notification. Sign in again to continue.
  
    ![Access granted notification](./assets/08-access-granted.png)
+
+10. Access the [Lab Tennant](https://ai.azure.com/nextgen/r/vs3vNBEWQUKMEXsTfUzxGA,lab-001,,lab-project-001,lab-project-001/home?tid=cafab625-5df6-4945-a529-bc8a681714ef) 
  
-10. The lab tenant requires more information to secure your account — start the **Set up MFA** flow.
+11. The lab tenant requires more information to secure your account — start the **Set up MFA** flow.
  
     ![Set up MFA for the lab tenant](./assets/09-setup-mfa-for-lab-tennat.png)
  
-11. If you don't already have it, install the Microsoft Authenticator app on your phone before continuing.
+12. If you don't already have it, install the Microsoft Authenticator app on your phone before continuing.
  
     ![Prepare the authenticator app](./assets/10-prepare-authenticator-app.png)
  
-12. In the authenticator app, choose to add a work or school account so it's ready to scan the QR code.
+13. In the authenticator app, choose to add a work or school account so it's ready to scan the QR code.
  
     ![Set up your account in the app](./assets/11-skip-to-next-step.png)
  
-13. Scan the QR code shown on screen using your phone's authenticator app.
+14. Scan the QR code shown on screen using your phone's authenticator app.
  
     ![Scan the QR code on your mobile phone](./assets/12-scan-the-qr-code-on-your-mobile-phone.png)
  
-14. Type the number displayed on screen into the authenticator app on your phone to confirm the pairing.
+15. Type the number displayed on screen into the authenticator app on your phone to confirm the pairing.
  
     ![Input the number shown into your phone](./assets/13-input-the-number-to-your-phone.png)
  
-15. MFA setup is complete. You can continue into the lab tenant.
+16. MFA setup is complete. You can continue into the lab tenant.
  
     ![MFA setup complete](./assets/14-mfa-complete.png)
  
