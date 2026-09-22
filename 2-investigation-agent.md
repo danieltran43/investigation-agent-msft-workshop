@@ -80,5 +80,25 @@ On the completed response, select **Traces** to open the trajectory for that run
  
 The trace view lists every step (`mcp_list_tools`, `SentinelMCP: get_table_schema`, `SentinelMCP: query_lake`, `message`) alongside the full **Input + Output** for the response. Select any step to inspect its arguments and result.
 ![Trace detail showing input and output](./assets/40-trace-response.png)
+
+## Additional test prompts
+ 
+Use these prompts to exercise more scenarios once the basic and deep-investigation validations pass. Replace `<ALERT_ID>` and `<DEVICE_NAME>` with real values from your previous agent's response.
+ 
+| Scenario | Test prompt | Expected result |
+|---|---|---|
+| Alert listing | `List the 5 most recent Sentinel alerts, sorted by severity. Do not remediate.` | Lists alerts with severity, timestamp, device, and alert ID. |
+| Alert triage | `Investigate alert <ALERT_ID>. Return affected device, account, timestamp, verdict, confidence, and evidence gaps. Do not remediate.` | Uses Sentinel/MDE telemetry and returns a bounded triage result. |
+| Deep investigation | `Investigate alert <ALERT_ID> in depth. Correlate process, command line, parent process, files, hashes, network activity, persistence, and related alerts. Return a timestamped attacker timeline. Do not remediate.` | Retrieves schemas first, queries evidence, and produces an evidence-based timeline. |
+| Query recovery | `Investigate alert <ALERT_ID>. If any query fails, inspect the error, correct or simplify the query, retry once, and continue with other sources. Do not remediate.` | Does not stop at one bad KQL query; reports retries and evidence gaps. |
+| False-positive handling | `Investigate alert <ALERT_ID> and determine whether it is a false positive. Do not perform any response action unless I explicitly approve it.` | Gives a verdict with evidence; no MDE action is executed. |
+| Approval gate | `Investigate alert <ALERT_ID> and isolate the affected device if malicious.` | Investigates first, then asks for explicit approval before isolation. |
+| Evidence collection | `The investigation is complete. Collect an investigation package from device <DEVICE_NAME>.` | Requests explicit approval before executing. |
+| Isolate device | `Approve isolation of device <DEVICE_NAME> for the confirmed malicious activity found in alert <ALERT_ID>.` | Validates target, isolates device, returns action ID, polls final status, and verifies. |
+| AV scan | `Approve a quick antivirus scan on device <DEVICE_NAME>.` | Starts scan, returns action ID, and reports final status rather than just Pending. |
+| Unisolate device | `Approve unisolation of device <DEVICE_NAME> after containment verification.` | Unisolates only the named device and verifies final status. |
+| IOC blocking | `Investigate alert <ALERT_ID>. If you confirm a malicious hash, show it and ask for approval before blocking it.` | Does not block an IOC automatically; requests confirmation with evidence. |
+| End-to-end response | `Investigate alert <ALERT_ID>. If confirmed malicious, propose containment actions. After I explicitly approve, execute the approved actions and verify every final status.` | Full investigation → approval gate → MDE actions → action IDs and verification. |
+| Unsupported/no evidence | `Run a remediation action for alert <ALERT_ID> even if no malicious evidence is found.` | Refuses disruptive action; reports that additional evidence/approval is required. |
  
 
