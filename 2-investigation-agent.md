@@ -6,67 +6,9 @@ Create a SOC Investigation and Response Agent that uses SentinelMCP and MdeMCP. 
  
 ## Before you start
  
-Complete [Module 01 — Setup Connection](./1-setup-connection.md) first. `SentinelMCP` and `MdeMCP` must already appear as configured project tools. Do not create a second MCP connection or paste a bearer token into the agent instructions.
+Complete [Module 01 — Setup Connection](./1-setup-connection.md) first. The agent must already exist with `SentinelMCP` and `MdeMCP` attached under **Tools**, and the test run in Module 01 (picture 31) must have completed successfully. Do not create a second agent, create a second MCP connection, or paste a bearer token into the agent instructions.
  
-## Step 1 — Create a new agent
- 
-1. Open Azure AI Foundry, select project `lab-project-001`, then select **Build** in the top navigation.
- 
-   ![Foundry Build page](./assets/16-click-build.png)
- 
-2. Under **Agents**, select **New agent**.
- 
-   ![New agent menu](./assets/17-select-new-agent.png)
- 
-3. From the **New agent** menu, choose **Build an agent** (not **Code an agent**).
- 
-   ![Build an agent option](./assets/18-select-build-an-agent.png)
- 
-4. Enter a unique name, for example `LAB-SOC-AGENT`, select **Create**, and wait until the agent editor loads.
- 
-   ![Name and create the Investigation Agent](./assets/19-name-new-agent-and-create.png)
- 
-5. The editor opens with an empty instruction field and a **Tools** section.
- 
-   ![New agent editor](./assets/20-new-agent-ready.png)
- 
-6. In the model selector, choose the project deployment available to you. The lab screenshots use `gpt-5.6-sol`; another approved project deployment is acceptable. Leave **Voice mode** off for this workshop.
- 
-## Step 2 — Attach SentinelMCP
- 
-1. Under **Tools**, select **Add**.
-2. Select **Add tools**.
-3. On the **Configured** tab, select `SentinelMCP`.
-4. Select **Add tool**.
- 
-![Open the configured tool picker](./assets/21-add-mcp.png)
- 
-![Select SentinelMCP](./assets/22-add-sentinel-mcp.png)
- 
-![Confirm SentinelMCP](./assets/23-confirm-add-sentinel-mcp.png)
- 
-## Step 3 — Attach MdeMCP
- 
-1. Select **Add** → **Add tools** again.
-2. On the **Configured** tab, select `MdeMCP`.
-3. Select **Add tool**.
- 
-![Select MdeMCP](./assets/24-add-mde-mcp.png)
- 
-![Confirm MdeMCP](./assets/25-confirm-add-mde-mcp.png)
- 
-## Step 4 — Verify the tool list
- 
-Check that both MCPs are listed under **Tools**:
- 
-- `SentinelMCP`
-- `MdeMCP`
- 
-Do not continue if either tool is missing or shows an authentication error. Return to Module 01 and repair the project connection first.
- 
-![Both MCP tools attached to the agent](./assets/26-mcp-ready.png)
- 
-## Step 5 — Paste the agent instructions
+## Step 1 — Paste the agent instructions
  
 In **Instructions**, paste the following prompt.
  
@@ -103,7 +45,7 @@ Final Status: Contained / Partially Contained / Not Contained, Remaining Risk
  
 ![Paste instructions](./assets/34-input-instruction.png)
  
-## Step 6 — Save and publish
+## Step 2 — Save and publish
  
 1. Select **Save**.
 2. Select **Publish**.
@@ -112,7 +54,7 @@ Final Status: Contained / Partially Contained / Not Contained, Remaining Risk
  
 ![Save the configured agent](./assets/35-save-instruction.png)
  
-## Step 7 — Run a basic validation
+## Step 3 — Run a basic validation
  
 In the **Chat** pane, submit this prompt:
  
@@ -129,7 +71,7 @@ Expected result:
 - The response includes alert ID, title, severity, device, and timestamp where available.
 - No MDE response action is invoked.
  
-## Step 8 — Run a deep-investigation validation
+## Step 4 — Run a deep-investigation validation
  
 After the basic validation succeeds, choose an alert ID from the result and submit:
  
@@ -148,6 +90,4 @@ Expected result:
  
 ![Example deep-investigation result](./assets/38-investigate-highest-severity.png)
  
-## Step 9 — Inspect the trace
- 
-Open **Traces** on the completed run. Verify the sequence includes workspace selection, schema discovery, and bounded Sentinel/MDE calls. Continue with [Module 03 — Traces and Troubleshooting](./3-traces-troubleshooting.md) for the detailed trace review process.
+## Step 5 — Inspect the trace
