@@ -1,4 +1,4 @@
-# 05 — Traces and Troubleshooting
+# 03 — Traces and Troubleshooting
 
 ## Inspect a run
 
