@@ -54,29 +54,12 @@ Final Status: Contained / Partially Contained / Not Contained, Remaining Risk
  
 ![Save the configured agent](./assets/35-save-instruction.png)
  
-## Step 3 — Run a basic validation
+## Step 3 — Run a deep-investigation validation
  
-In the **Chat** pane, submit this prompt:
- 
-```text
-List 5 most recent Sentinel alerts, sorted by severity. Do not remediate.
-```
- 
-![Enter the basic validation prompt](./assets/37-run-command.png)
- 
-Expected result:
- 
-- The agent selects a workspace.
-- It lists a small, severity-sorted set of alerts.
-- The response includes alert ID, title, severity, device, and timestamp where available.
-- No MDE response action is invoked.
- 
-## Step 4 — Run a deep-investigation validation
- 
-After the basic validation succeeds, choose an alert ID from the result and submit:
+After save the agent instructions succeeds, ask the agent to investigate and prioritize the highest severity alert and submit:
  
 ```text
-Deeply investigate alert <ALERT_ID>. Retrieve schemas first, correlate Sentinel and MDE telemetry, retry failed queries, and return a timestamped attacker timeline. Do not remediate.
+Deeply investigate highest severity alert. Retrieve schemas first, correlate Sentinel and MDE telemetry, retry failed queries, and return a timestamped attacker timeline. Do not remediate.
 ```
  
 ![Enter the deep-investigation prompt](./assets/36-investigate.png)
@@ -90,4 +73,16 @@ Expected result:
  
 ![Example deep-investigation result](./assets/38-investigate-highest-severity.png)
  
-## Step 5 — Inspect the trace
+## Step 4 — Inspect the trace
+
+These two steps are optional. Use them only if you want to see exactly which tools the agent called and in what order.
+ 
+On the completed response, select **Traces** to open the trajectory for that run.
+ 
+    ![Optional: open Traces on the completed run](./assets/39-trace-optional.png)
+ 
+The trace view lists every step (`mcp_list_tools`, `SentinelMCP: get_table_schema`, `SentinelMCP: query_lake`, `message`) alongside the full **Input + Output** for the response. Select any step to inspect its arguments and result.
+ 
+    ![Optional: trace detail showing input and output](./assets/40-trace-response.png)
+ 
+
