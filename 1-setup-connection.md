@@ -4,20 +4,17 @@
 
 Attach the two existing MCP servers to the Foundry project without exposing secrets.
 
-## Endpoints
+## Prerequisite
 
-```text
+```Endpoints
 SentinelMCP: https://mcp-sentinel.gentleflower-524cd753.eastus2.azurecontainerapps.io/mcp
 MdeMCP:      https://mcp-mde.gentleflower-524cd753.eastus2.azurecontainerapps.io/mcp
 ```
 
-The MCP servers expect bearer authentication:
+Information only. You will be able to select these MCPs as an option during the lab.
 
-```text
-Authorization: Bearer <MCP_API_KEY>
-```
-
-Get `MCP_API_KEY` from the relevant MCP secret configuration, never from an Azure OpenAI model key. The source is either the matching local `.env` file or the Container App environment/secret reference. Do not paste the value into chat, prompts, or screenshots.
+## Request Access To Your Environement
+1.
 
 ## Foundry UI steps
 
