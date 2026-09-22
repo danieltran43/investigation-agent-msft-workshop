@@ -75,14 +75,10 @@ Expected result:
  
 ## Step 4 — Inspect the trace
 
-These two steps are optional. Use them only if you want to see exactly which tools the agent called and in what order.
- 
 On the completed response, select **Traces** to open the trajectory for that run.
- 
-    ![Optional: open Traces on the completed run](./assets/39-trace-optional.png)
+![Open Traces on the completed run](./assets/39-trace-optional.png)
  
 The trace view lists every step (`mcp_list_tools`, `SentinelMCP: get_table_schema`, `SentinelMCP: query_lake`, `message`) alongside the full **Input + Output** for the response. Select any step to inspect its arguments and result.
- 
-    ![Optional: trace detail showing input and output](./assets/40-trace-response.png)
+![Trace detail showing input and output](./assets/40-trace-response.png)
  
 
