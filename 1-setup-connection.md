@@ -4,18 +4,10 @@
  
 Walk through the full lab entry path: request access to the lab environment, set up MFA for the lab tenant, sign in to Microsoft Foundry, create an agent, and attach the two existing MCP servers (`SentinelMCP`, `MdeMCP`) without exposing secrets. The main path ends once the test run completes successfully (picture 31). Viewing the run trace (pictures 32–33) is optional and only needed if you want to inspect how the agent called each tool.
  
-## Prerequisite
- 
-```Endpoints
-SentinelMCP: https://mcp-sentinel.gentleflower-524cd753.eastus2.azurecontainerapps.io/mcp
-MdeMCP:      https://mcp-mde.gentleflower-524cd753.eastus2.azurecontainerapps.io/mcp
-```
- 
-Information only. You will be able to select these MCPs as an option during the lab; you do not need to type these URLs in manually.
  
 ## Part 1 — Request access to the lab environment
  
-1. Scan the QR code shared by the facilitator to open the lab access request page.
+1. Scan the QR code shared by the facilitator to open the lab access request page, or open [This Page](https://myaccess.microsoft.com/@vertexia.onmicrosoft.com#/access-packages/082b0c14-b344-4a14-9abf-bd1e91ac5879).
  
    ![QR code to request access to the lab environment](./assets/0-vertexia-lab-request.png)
  
