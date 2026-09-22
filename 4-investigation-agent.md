@@ -1,4 +1,4 @@
-# 04 — Create the Investigation Agent
+# 02 — Create the Investigation Agent
 
 ## Objective
 
